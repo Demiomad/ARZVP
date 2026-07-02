@@ -55,3 +55,6 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+/.vs/ARZVPRewrite.slnx/FileContentIndex
+/.vs/ARZVPRewrite.slnx/v18
+/ARZVPRewrite/.vs
