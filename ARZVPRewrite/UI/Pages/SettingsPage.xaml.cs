@@ -38,6 +38,8 @@ namespace ARZVPRewrite.UI.Pages
                 var lang = Core.Localisation.Language.GetFromJson(file);
                 LanguageBox.Items.Add(lang);
             }
+
+            VlcPathBox.Text = EntryPoint.Config.VlcPath;
         }
 
         private void ApplyBtnClicked(object sender, RoutedEventArgs e)
@@ -46,7 +48,17 @@ namespace ARZVPRewrite.UI.Pages
             if (lang == null)
                 return;
 
+            EntryPoint.Config.VlcPath = VlcPathBox.Text;
             EntryPoint.Config.LanguageCode = ((Language)lang).Code;
+        }
+
+        private void BrowseVlcClicked(object sender, RoutedEventArgs e)
+        {
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    VlcPathBox.Text = dialog.SelectedPath;
+            }
         }
     }
 }

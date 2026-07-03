@@ -21,6 +21,12 @@ namespace ARZVPRewrite.Models
         public string LanguageCode { get; set; } = "en";
 
         /// <summary>
+        /// Gets or sets the path of the VLC installation.
+        /// </summary>
+        [JsonProperty("vlc")]
+        public string VlcPath { get; set; } = @"C:\Program Files\VideoLAN\VLC";
+
+        /// <summary>
         /// Saves the configuration to disk.
         /// </summary>
         public void Save()

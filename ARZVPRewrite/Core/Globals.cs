@@ -44,5 +44,10 @@ namespace ARZVPRewrite.Core
         /// Raised whenever <see cref="SelectedTemplate"/> is changed.
         /// </summary>
         public static event TemplateSelectionChangedEventListener TemplateSelectionChanged;
+
+        /// <summary>
+        /// Gets or sets the selected video offset.
+        /// </summary>
+        public static TimeSpan Offset { get; set; }
     }
 }

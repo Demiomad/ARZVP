@@ -49,7 +49,12 @@ namespace ARZVPRewrite.UI.Pages
                 Directory.CreateDirectory(outputPath);
 
                 LogBox.Clear();
-                TemplateManager.Apply(Globals.SelectedTemplate, outputPath, Globals.SelectedEvent.ActiveTake.MediaPath, Globals.SelectedEvent.Start, LogBox); 
+                var dialog = new VideoScrubDialog();
+                var result = dialog.ShowDialog();
+
+                if (result == true)
+                    TemplateManager.Apply(Globals.SelectedTemplate, outputPath,
+                        Globals.SelectedEvent.ActiveTake.MediaPath, dialog.SelectedOffset, LogBox);
             }
             catch (Exception ex)
             {

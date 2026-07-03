@@ -27,6 +27,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock
@@ -43,6 +44,38 @@
             DisplayMemberPath="Name"
             Foreground="{DynamicResource PrimaryForeground}"
             SelectionMode="Single" />
+
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Column="0"
+                Margin="5"
+                VerticalAlignment="Center"
+                FontWeight="Medium"
+                Text="{loc:Translation page.settings.vlc}" />
+
+            <TextBox
+                x:Name="VlcPathBox"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Background="{DynamicResource SecondaryBackground}"
+                BorderThickness="0"
+                FontSize="16"
+                Foreground="{DynamicResource PrimaryForeground}" />
+
+            <Button
+                x:Name="BrowseVlc"
+                Grid.Column="2"
+                Margin="5"
+                VerticalAlignment="Center"
+                Click="BrowseVlcClicked"
+                Content="..." />
+        </Grid>
 
         <Button
             x:Name="ApplyBtn"
