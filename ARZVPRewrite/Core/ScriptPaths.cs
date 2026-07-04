@@ -42,6 +42,20 @@ namespace ARZVPRewrite.Core
         public static readonly string ConfigFilePath =
             Path.Combine(BasePath, "config.json");
 
+        /// <summary>
+        /// Gets the config file path.
+        /// </summary>
+        public static readonly string ToolsPath =
+            Path.Combine(BasePath, "tools");
+
+        /// <summary>
+        /// Gets the path of a tool.
+        /// </summary>
+        public static string GetToolPath(string toolName, string executable)
+        {
+
+        }
+
         static ScriptPaths()
         {
             Directory.CreateDirectory(BasePath);
