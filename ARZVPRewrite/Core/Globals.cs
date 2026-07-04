@@ -34,9 +34,9 @@ namespace ARZVPRewrite.Core
         }
         
         /// <summary>
-        /// Gets or sets the selected video event.
+        /// Gets or sets the selected video file.
         /// </summary>
-        public static VideoEvent SelectedEvent { get; set; }
+        public static string SelectedVideo { get; set; }
 
         public delegate void TemplateSelectionChangedEventListener(Template template);
 

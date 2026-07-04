@@ -1,0 +1,15 @@
+{
+	"metadata": {
+		"name": "テンプレート4",
+		"description": "Original: https://youtu.be/0BIOUMdnZiA",
+		"author": "Demiomad"
+	},
+	"requirements": {
+		"minimumVegas": "23"
+	},
+	"files": {
+		"veg": "video.veg",
+		"rpp": "audio.rpp",
+		"resources": ["REDZONE.wav", "NeonDrum.wav"]
+	}
+}

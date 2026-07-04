@@ -128,25 +128,14 @@ namespace ARZVPRewrite.UI.Pages
                         SetTimeText(span, _durSpan);
                     }
                 };
-                
-                var ev = Globals.SelectedEvent;
-                if (ev == null)
-                    return;
 
-                var take = ev.ActiveTake;
-                if (!take.IsValid() || take == null)
-                    return;
-
-                var path = take.MediaPath;
-                if (string.IsNullOrEmpty(path))
-                    return;
 
                 Preview.MediaPlayer = _player;
 
-                _media = new LibVLCSharp.Shared.Media(_vlc, path);
+                _media = new LibVLCSharp.Shared.Media(_vlc, Globals.SelectedVideo);
                 _player.Media = _media;
 
-                _dur = take.Length;
+                _dur = Timecode.FromMilliseconds(_media.Duration);
                 _durSpan = _dur.ToTimeSpan();
 
                 ScrubSlider.Maximum = _durSpan.TotalSeconds;

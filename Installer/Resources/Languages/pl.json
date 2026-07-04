@@ -1,0 +1,41 @@
+{
+	"name": "Polski",
+	"translations": {
+		"window.arzvp.title": "AutoRedZone dla VEGAS Pro",
+		
+		"button.home": "Główna",
+		"button.settings": "Ustawienia",
+		"button.generate": "Generuj",
+		"button.templates": "Szablony",
+		"button.info": "Informacje",
+		"button.apply": "Zastosuj",
+		
+		"page.home.heading": "Cześć!",
+		"page.home.content": "Witaj w nowej wersji ARZVP.",	
+		"page.templates.count": "Znaleziono {0} szablon(ów)",
+		"page.templates.selected": "Wybrano: {0}",
+		"page.templates.none": "Wybierz szablon",
+		"page.settings.language": "Język",
+		"page.settings.vlc": "Lokalizacja do katalogu VLC:",
+		
+		"error.notselected": "Proszę najpierw wybrać szablon!",
+		"error.nomedia": "Proszę wybrać plik!",
+		"error.vlcmissing": "Katalog do VLC nie istnieje!\nProszę skonfigurować lokalizację w ustawieniach.",
+		"error.title": "Błąd",
+		
+		"tooltip.template.nameauthor": "{0} przez {1}",
+		
+		"dialog.videoscrub": "Ustaw przesunięcie fragmentu",
+		
+		"status.ready": "Gotowy",
+		"status.creating": "Tworzenie katalogu wyjściowego",
+		"status.converting": "Konwertowanie pliku wejściowego do formatu WAV",
+		"status.extracting": "Pobieranie fragmentu audio",
+		"status.synth": "Tworzenie syntezatora",
+		"status.copying": "Kopiowanie zasobów",
+		"status.rpp": "Tworzenie pliku RPP",
+		"status.veg": "Tworzenie pliku VEG",
+		"status.cleanup": "Czyszczenie",
+		"status.finish": "Koniec! Lokalizacja wyjściowa: {0}"
+	}
+}
