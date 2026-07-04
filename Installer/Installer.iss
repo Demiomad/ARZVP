@@ -29,7 +29,7 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"
 
 [Files]
-Source: ".\DLL\ARZVP.dll"; DestDir: "{userdocs}\Vegas Script Menu\AutoRedZone for VEGAS Pro"; Flags: ignoreversion
+Source: ".\DLL\ARZVPRewrite.dll"; DestDir: "{userdocs}\Vegas Script Menu\AutoRedZone for VEGAS Pro"; Flags: ignoreversion
 Source: ".\Resources\Templates\*"; DestDir: "{localappdata}\ARZVPv2\templates"; Flags: recursesubdirs
 Source: ".\Resources\Languages\*"; DestDir: "{localappdata}\ARZVPv2\langs"; Flags: recursesubdirs
 
