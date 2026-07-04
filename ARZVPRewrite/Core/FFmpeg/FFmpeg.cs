@@ -12,13 +12,34 @@ namespace ARZVPRewrite.Core.FFmpeg
     /// </summary>
     public static class FFmpeg
     {
+        private static string _dlUrl = "https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v6.1/ffmpeg-6.1-win-64.zip";
         private static string _ffmpegPath;
 
         /// <summary>
-        /// DEtermines if FFmpeg is installed on the user's system.
+        /// DEtermines if FFmpeg is in the user's PATH environment variable.
         /// </summary>
-        public static bool IsFFmpegInstalled()
-            => !string.IsNullOrEmpty(FindFFmpegInPath()) || !string.IsNullOrEmpty(_ffmpegPath);
+        public static bool IsFFmpegInPath()
+            => !string.IsNullOrEmpty(FindFFmpegInPath());
+
+        /// <summary>
+        /// Retrieves the FFmpeg executable by either finding it in the PATH environment variable or by downloading a binary from the internet.
+        /// </summary>
+        public static void GetFFmpeg()
+        {
+            if (IsFFmpegInPath())
+            {
+                _ffmpegPath = FindFFmpegInPath();
+                return;
+            }
+
+            
+        }
+
+        /// <summary>
+        /// Returns the FFmpeg path.
+        /// </summary>
+        public static string GetFFmpegPath()
+            => _ffmpegPath;
 
         private static string FindFFmpegInPath()
         {
@@ -33,6 +54,8 @@ namespace ARZVPRewrite.Core.FFmpeg
                 if (File.Exists(fullPath))
                     return fullPath;
             }
+
+            return string.Empty;
         }
     }
 }

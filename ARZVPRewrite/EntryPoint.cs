@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,15 @@ namespace ARZVPRewrite
     /// </summary>
     public class EntryPoint
     {
+        /// <summary>
+        /// Gets or sets the current configuration.
+        /// </summary>
         public static ScriptConfig Config { get; set; }
+
+        /// <summary>
+        /// Gets or sets the HTTP client.
+        /// </summary>
+        public static HttpClient Http { get; set; }
 
         /// <summary>
         /// The entry point method.
@@ -31,6 +40,11 @@ namespace ARZVPRewrite
         {
             try
             {
+                Http = new HttpClient()
+                {
+                    Timeout = TimeSpan.FromSeconds(30)
+                };
+
                 Config = ScriptConfig.Load();
                 Globals.Vegas = veg;
 
@@ -68,6 +82,7 @@ namespace ARZVPRewrite
             finally
             {
                 Config.Save();
+                Http.Dispose();
             }
         }
     }

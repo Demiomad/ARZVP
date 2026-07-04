@@ -53,7 +53,10 @@ namespace ARZVPRewrite.Core
         /// </summary>
         public static string GetToolPath(string toolName, string executable)
         {
+            var path = Path.Combine(ToolsPath, toolName);
+            Directory.CreateDirectory(path);
 
+            return Path.Combine(path, executable);
         }
 
         static ScriptPaths()

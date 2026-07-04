@@ -1,0 +1,41 @@
+{
+	"name": "English",
+	"translations": {
+		"window.arzvp.title": "AutoRedZone for VEGAS Pro",
+		
+		"button.home": "Home",
+		"button.settings": "Settings",
+		"button.generate": "Generate",
+		"button.templates": "Templates",
+		"button.info": "Info",
+		"button.apply": "Apply",
+		
+		"page.home.heading": "Hello!",
+		"page.home.content": "Welcome to the new version of ARZVP.",	
+		"page.templates.count": "Found {0} templates",
+		"page.templates.selected": "Selected: {0}",
+		"page.templates.none": "Select a template",
+		"page.settings.language": "Language",
+		"page.settings.vlc": "VLC directory path:",
+		
+		"error.notselected": "Please select a template first!",
+		"error.nomedia": "Please select an event from the timeline!\nIt must contain video and audio streams.",
+		"error.vlcmissing": "VLC directory doesn't exist!\nPlease configure the path in the settings.",
+		"error.title": "Error",
+		
+		"tooltip.template.nameauthor": "{0} by {1}",
+		
+		"dialog.videoscrub": "Set Sample Offset",
+		
+		"status.ready": "Ready",
+		"status.creating": "Creating output directory",
+		"status.converting": "Converting input to WAV",
+		"status.extracting": "Extracting sample",
+		"status.synth": "Creating synth",
+		"status.copying": "Copying resources",
+		"status.rpp": "Creating RPP",
+		"status.veg": "Creating VEG",
+		"status.cleanup": "Cleaning up",
+		"status.finish": "Done! Output path: {0}"
+	}
+}
