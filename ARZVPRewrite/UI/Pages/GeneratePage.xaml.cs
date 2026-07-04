@@ -45,7 +45,7 @@ namespace ARZVPRewrite.UI.Pages
                     return;
                 }
 
-                var outputPath = System.IO.Path.Combine(ScriptPaths.OutputPath, System.IO.Path.GetFileNameWithoutExtension(Globals.SelectedEvent.ActiveTake.MediaPath));
+                var outputPath = System.IO.Path.Combine(ScriptPaths.OutputPath, System.IO.Path.GetFileNameWithoutExtension(Globals.SelectedVideo));
                 Directory.CreateDirectory(outputPath);
 
                 LogBox.Clear();
@@ -54,7 +54,7 @@ namespace ARZVPRewrite.UI.Pages
 
                 if (result == true)
                     TemplateManager.Apply(Globals.SelectedTemplate, outputPath,
-                        Globals.SelectedEvent.ActiveTake.MediaPath, dialog.SelectedOffset, LogBox);
+                        Globals.SelectedVideo, dialog.SelectedOffset, LogBox);
             }
             catch (Exception ex)
             {

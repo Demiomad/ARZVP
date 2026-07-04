@@ -58,5 +58,3 @@ nunit-*.xml
 /.vs/ARZVPRewrite.slnx/FileContentIndex
 /.vs/ARZVPRewrite.slnx/v18
 /ARZVPRewrite/.vs
-/Installer/DLL
-/Installer/Output

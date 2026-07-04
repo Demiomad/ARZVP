@@ -1,4 +1,5 @@
-﻿using ARZVPRewrite.Extensions;
+﻿using ARZVPRewrite.Core.FFmpeg;
+using ARZVPRewrite.Extensions;
 using ScriptPortal.Vegas;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace AutoRedZoneVP.Core.FFMpeg
 
                 var psi = new ProcessStartInfo()
                 {
-                    FileName = "ffmpeg",
+                    FileName = FFmpeg.GetFFmpegPath(),
                     Arguments = $"-stream_loop -1 -i \"{segmentPath}\" -t 20 \"{output}\" -y -af loudnorm",
                     CreateNoWindow = true,
                     UseShellExecute = false,

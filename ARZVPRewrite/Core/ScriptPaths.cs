@@ -42,12 +42,30 @@ namespace ARZVPRewrite.Core
         public static readonly string ConfigFilePath =
             Path.Combine(BasePath, "config.json");
 
+        /// <summary>
+        /// Gets the config file path.
+        /// </summary>
+        public static readonly string ToolsPath =
+            Path.Combine(BasePath, "tools");
+
+        /// <summary>
+        /// Gets the path of a tool.
+        /// </summary>
+        public static string GetToolPath(string toolName, string executable)
+        {
+            var path = Path.Combine(ToolsPath, toolName);
+            Directory.CreateDirectory(path);
+
+            return Path.Combine(path, executable);
+        }
+
         static ScriptPaths()
         {
             Directory.CreateDirectory(BasePath);
             Directory.CreateDirectory(LanguagesPath);
             Directory.CreateDirectory(TemplatesPath);
             Directory.CreateDirectory(OutputPath);
+            Directory.CreateDirectory(ToolsPath);
         }
     }
 }
