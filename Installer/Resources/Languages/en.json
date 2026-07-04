@@ -19,7 +19,7 @@
 		"page.settings.vlc": "VLC directory path:",
 		
 		"error.notselected": "Please select a template first!",
-		"error.nomedia": "Please select an event from the timeline!\nIt must contain video and audio streams.",
+		"error.nomedia": "Please select a file!",
 		"error.vlcmissing": "VLC directory doesn't exist!\nPlease configure the path in the settings.",
 		"error.title": "Error",
 		

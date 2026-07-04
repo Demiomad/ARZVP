@@ -19,7 +19,7 @@
 		"page.settings.vlc": "Lokalizacja do katalogu VLC:",
 		
 		"error.notselected": "Proszę najpierw wybrać szablon!",
-		"error.nomedia": "Proszę wybrać zdarzenie z osi czasu!\nMusi zawierać ścieżkę wideo i audio.",
+		"error.nomedia": "Proszę wybrać plik!",
 		"error.vlcmissing": "Katalog do VLC nie istnieje!\nProszę skonfigurować lokalizację w ustawieniach.",
 		"error.title": "Błąd",
 		

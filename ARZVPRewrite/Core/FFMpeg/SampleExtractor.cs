@@ -1,4 +1,5 @@
-﻿using ARZVPRewrite.Extensions;
+﻿using ARZVPRewrite.Core.FFmpeg;
+using ARZVPRewrite.Extensions;
 using ScriptPortal.Vegas;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,7 @@ namespace AutoRedZoneVP.Core.FFMpeg
 
                 var psi = new ProcessStartInfo()
                 {
-                    FileName = "ffmpeg",
+                    FileName = FFmpeg.GetFFmpegPath(),
                     Arguments = $"-i \"{input}\" -ss {offset.ToMilliseconds() / 1000} -t {duration} -acodec pcm_s16le -ar 44100 -ac 2 \"{output}\" -y",
                     CreateNoWindow = true,
                     UseShellExecute = false,

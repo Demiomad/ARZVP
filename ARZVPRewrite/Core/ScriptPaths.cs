@@ -65,6 +65,7 @@ namespace ARZVPRewrite.Core
             Directory.CreateDirectory(LanguagesPath);
             Directory.CreateDirectory(TemplatesPath);
             Directory.CreateDirectory(OutputPath);
+            Directory.CreateDirectory(ToolsPath);
         }
     }
 }

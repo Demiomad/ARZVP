@@ -24,15 +24,31 @@ namespace ARZVPRewrite.Core.FFmpeg
         /// <summary>
         /// Retrieves the FFmpeg executable by either finding it in the PATH environment variable or by downloading a binary from the internet.
         /// </summary>
-        public static void GetFFmpeg()
+        public static async Task GetFFmpeg()
         {
+            var path = ScriptPaths.GetToolPath("FFmpeg", "ffmpeg.exe");
+
+            if (File.Exists(path))
+            {
+                _ffmpegPath = path;
+                return;
+            }
+
             if (IsFFmpegInPath())
             {
                 _ffmpegPath = FindFFmpegInPath();
                 return;
             }
 
-            
+            using (var response = await EntryPoint.Http.GetAsync(_dlUrl))
+            {
+                using (var fs = new FileStream(path, FileMode.CreateNew))
+                {
+                    await response.Content.CopyToAsync(fs);
+                }
+            }
+
+            _ffmpegPath = path;
         }
 
         /// <summary>
