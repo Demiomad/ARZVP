@@ -50,7 +50,7 @@
                         Margin="5"
                         VerticalAlignment="Center"
                         FontSize="16"
-                        Text="v2.2.0" />
+                        Text="v2.2.1" />
                 </StackPanel>
 
                 <Button

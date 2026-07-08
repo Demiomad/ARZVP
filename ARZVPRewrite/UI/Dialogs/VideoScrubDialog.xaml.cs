@@ -97,7 +97,7 @@ namespace ARZVPRewrite.UI.Pages
             SeekToScrubberPos();
         }
 
-        private void ScrubDialogLoaded(object sender, RoutedEventArgs e)
+        private async void ScrubDialogLoaded(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -135,15 +135,24 @@ namespace ARZVPRewrite.UI.Pages
                 _media = new LibVLCSharp.Shared.Media(_vlc, Globals.SelectedVideo);
                 _player.Media = _media;
 
+                await _media.Parse();
+                _media.ParsedChanged += MediaParseStatusChanged;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void MediaParseStatusChanged(object sender, MediaParsedChangedEventArgs e)
+        {
+            if (e.ParsedStatus == MediaParsedStatus.Done)
+            {
                 _dur = Timecode.FromMilliseconds(_media.Duration);
                 _durSpan = _dur.ToTimeSpan();
 
                 ScrubSlider.Maximum = _durSpan.TotalSeconds;
                 SetTimeText(TimeSpan.Zero, _durSpan);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -178,6 +187,7 @@ namespace ARZVPRewrite.UI.Pages
             _player?.Dispose();
             _vlc?.Dispose();
             _media?.Dispose();
+            _media.ParsedChanged -= MediaParseStatusChanged;
         }
 
         private void ScrubSliderPreviewMouseDown(object sender, MouseButtonEventArgs e)
